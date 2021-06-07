@@ -31,7 +31,7 @@ size
 ; ))
 
 (define (abs x)
-    (if (< x 0) (- x) )
+    (if (< x 0) (- x) x)
 )
 (abs -10)
 (abs 0)
@@ -54,8 +54,8 @@ size
 ; (tryif 1)
 
 ; 出错的原因 是 iff 是 应用序 
-(tryiff 0)
-(tryiff 1)
+; (tryiff 0)
+; (tryiff 1)
 
 ; 综上：对各种表达式的求值规则可以描述为一个简单的通用规则和一组针对不多的特殊形式的专门规则。
 
