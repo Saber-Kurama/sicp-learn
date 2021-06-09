@@ -30,8 +30,26 @@
         (* (number y) (denom x))
     )
 )
+(define (gcd a b)
+    (if (= b 0)
+        a
+        (gcd b (remainder a b)) 
+    )
+)
 ; 生成有理数
-(define (make-rat x y) (cons x y))
+; (define (make-rat x y) (cons x y))
+(define (make-rat x y)
+    (let ( 
+            (g (gcd x y))
+            (x1 (if (or (and (> x 0) (< y 0)) (and (< x 0) (< y 0))) (- x) x ))
+            (y1 (if (< y 0) (- y) y ))
+            
+         )
+     (cons (/ x1 g )  (/ y1 g ))
+    )
+)
+(make-rat 5 -10)
+(make-rat 5 10)
 ; 获取有理数的分子
 (define (number x) (car x))
 ; 获取有理数的分母
@@ -43,3 +61,4 @@
 (sub-rat n1 n2)
 (mul-rat n1 n2)
 (equal-rat n1 n2)
+
