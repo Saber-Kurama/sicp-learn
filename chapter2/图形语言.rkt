@@ -115,3 +115,17 @@
     (combine4 painter)
   )
 )
+
+; 框架
+
+; 生成 框架 
+(define (make-frame x) x)
+
+; 框架 基准向量
+(define (origin-frame x) x)
+
+; 框架 角度向量1
+(define (edge1-frame x) x)
+
+; 框架 角度向量2
+(define (edge2-frame x) x)
