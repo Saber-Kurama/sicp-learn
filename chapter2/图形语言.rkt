@@ -110,9 +110,9 @@
   )
 )
 
-(define (square-limit1 painter)
+(define (square-limit1 painter n)
   (let ((combine4 (square-of-four flip-vert identity rotate180 flip-horiz)))
-    (combine4 painter)
+    (combine4 ((corner-split painter n)))
   )
 )
 
