@@ -39,6 +39,7 @@
 ; 3.1.2 赋值带来的利益
 
 ; 随机数
+; random-init 随机数的种子
 ; x2 = (rand-update x1)
 ; x3 = (rand-update x2)
 
