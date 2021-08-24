@@ -165,3 +165,20 @@
 (define fibs (const-stream 0 (cons-stream 1 (add-streams (stream-cdr fibs) fibs))))
 
 
+; 构造素数
+(define (sieve stream)
+  (cons-stream (stream-car stream)
+    (sieve (stream-filter (lambda (x) (not (divisible? x (stream-car stream))))(stream-cdr stream)))
+  )
+)
+
+(define primes (sieve (integer-starting-from 2)))
+
+; (define (stream-ref s n)
+;   (if (= n 0)
+;     (stream-car s)
+;     (stream-ref (stream-cdr s) (- n 1))
+;   )
+; )
+
+(stream-fef primes 10)
