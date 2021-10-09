@@ -50,3 +50,25 @@
         (else (error "Unknow procedure type -- APPLY" procedure))
   )
 )
+
+; 过程参数
+; 生成过程的实际参数表
+(define (list-of-values exps env)
+  (if (no-operands? exps)) ()
+      (cons (eval (first-operand exps) env) (list-of-values (rest-operands exps) env))
+)
+
+; 条件
+; 根据谓词来求值 真 求 if 推论部分 否则就采用替换部分
+(define (evel-if exp env)
+  (if (true? (eval (if-predicate exp) env))
+      (eval (if-consequent exp) env)
+      (eval (if-alternative exp) env)
+  )
+)
+
+; 序列
+
+; 赋值 和 定义
+
+
