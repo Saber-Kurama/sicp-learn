@@ -1,6 +1,6 @@
 #lang sicp
 
-(define (evel exp  env)
+(define (eval exp  env)
   exp
 )
 
@@ -78,7 +78,7 @@
 (define (driver-loop)
   (prompt-for-input input-prompt)
   (let ((input (read)))
-    (let ((output (evel input the-global-environment)))
+    (let ((output (eval input the-global-environment)))
       (announce-output output-prompt)
       (user-print output)
     )

@@ -6,7 +6,7 @@ A
 'A
 ; Value: a 使用的符号类型
 
-; 引用 ？  evel ？ 字符串 ？
+; 引用 ？  eval ？ 字符串 ？
 
 ; (list )
 ; '(a b c)
